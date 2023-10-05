@@ -23,6 +23,7 @@ const groupedByAge: AgeGroupData = {
   "51+": [],
 };
 
+// TODO: Put this in utils instead
 userData.forEach((datum) => {
   if (datum.age > 50) {
     groupedByAge["51+"].push(datum);
