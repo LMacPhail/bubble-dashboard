@@ -1,10 +1,10 @@
-import { UserData } from "./types";
+import { User } from "./types";
 
 /** Returns the mean of numerical values in the data.
  */
 export const getMean = (
-  metric: keyof UserData,
-  userData: UserData[]
+  metric: keyof User,
+  userData: User[]
 ): number | string => {
   if (typeof userData[0][metric] !== "number") {
     return "Numerical values only please";

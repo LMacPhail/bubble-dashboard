@@ -1,4 +1,4 @@
-export type UserData = {
+export type User = {
   id: string;
   creationDate: string;
   age: number;
@@ -12,9 +12,8 @@ export type UserData = {
   idVerified: boolean;
   referenceChecked: boolean;
   hasProfileVideo: boolean;
-  oFSTEDRegistered: boolean;
-  newBornExperience: boolean;
-  hasUKDrivingLicense: boolean | null;
+  oFSTEDRegistered: boolean | null;
+  newBornExperience: boolean | null;
   firstAidTrained: boolean;
   specialNeedsExperience: boolean;
   otherLanguagesSpoken: string;
