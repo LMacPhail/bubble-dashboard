@@ -12,8 +12,11 @@ import {
 } from "@tremor/react";
 import { userData } from "./data/userData";
 import { getMean } from "./data/utils";
+import { filterMinWage } from "./components/charts/utils";
 
 export default function DashboardExample() {
+  const minWageFiltered = filterMinWage(userData.slice(0, 1000));
+  const usersOver23 = minWageFiltered["23+"];
   return (
     <main className="p-12">
       <Title>Bubble Data Overview</Title>
