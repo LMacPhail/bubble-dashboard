@@ -1,4 +1,4 @@
-import { UserData } from "./types";
+import { MinWage, UserData } from "./types";
 
 /** Returns the mean of numerical values in the data.
  */
@@ -18,3 +18,7 @@ export const getMean = (
 
   return ((total as number) / userData.length).toFixed(2);
 };
+
+// Filters out stark outliers, such as users with age 0 or users with an impossibly high hourly rate
+export const filterOutliers = (userData: UserData[]) =>
+  userData.filter((x) => x.age !== 0 && x.hourlyRate < 200);
