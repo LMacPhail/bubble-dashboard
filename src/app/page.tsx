@@ -9,14 +9,14 @@ import {
   Flex,
   Metric,
   Col,
+  BarChart,
 } from "@tremor/react";
 import { userData } from "./data/userData";
 import { getMean } from "./data/utils";
 import { filterMinWage } from "./components/charts/utils";
+import MinimumWageChart from "./components/charts/MinimumWageChart";
 
 export default function DashboardExample() {
-  const minWageFiltered = filterMinWage(userData.slice(0, 1000));
-  const usersOver23 = minWageFiltered["23+"];
   return (
     <main className="p-12">
       <Title>Bubble Data Overview</Title>
@@ -70,6 +70,9 @@ export default function DashboardExample() {
               </Flex>
             </Card>
           </div>
+        </Col>
+        <Col numColSpan={6}>
+          <MinimumWageChart userData={userData} />
         </Col>
       </Grid>
     </main>

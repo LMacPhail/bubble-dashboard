@@ -30,7 +30,8 @@ export type MinWageUsers = Record<
   boolean[]
 >;
 
-// export type MinWage = {
-//   ageGroup: "<18" | "18-21" | "21-25" | "25+";
-//   belowMinWage: boolean;
-// };
+export type MinWage = {
+  ageGroup: "<18" | "18-20" | "21-22" | "23+";
+  below: number;
+  above: number;
+};
