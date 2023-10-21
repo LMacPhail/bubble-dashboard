@@ -13,8 +13,8 @@ const OVER_23_MIN_WAGE = 10.42;
 
 export const filterMinWage = (userData: UserData[]): MinWage[] => {
   const under18Users = userData.filter((u) => u.age < 18);
-  const under21Users = userData.filter((u) => u.age < 21);
-  const under22Users = userData.filter((u) => u.age < 22);
+  const under21Users = userData.filter((u) => u.age >= 18 && u.age < 21);
+  const under22Users = userData.filter((u) => u.age >= 21 && u.age < 23);
   const over23Users = userData.filter((u) => u.age >= 23);
 
   return [

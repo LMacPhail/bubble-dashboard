@@ -1,3 +1,4 @@
+import { MinWage } from "@/app/data/types";
 import { filterMinWage } from "./utils";
 
 const users = [
@@ -121,9 +122,9 @@ const users = [
     referenceChecked: true,
     hasProfileVideo: false,
     oFSTEDRegistered: null,
-    newBornExperience: null,
+    newBornExperience: false,
     hasUKDrivingLicense: null,
-    firstAidTrained: null,
+    firstAidTrained: false,
     specialNeedsExperience: false,
     otherLanguagesSpoken: "",
   },
@@ -194,12 +195,20 @@ const users = [
 
 describe("filterMinWage", () => {
   it("sorts group correctly", () => {
-    const minWageUsers = filterMinWage(users);
-    expect.minWageUsers.toBe({
-      "<18": [],
-      "18-20": [true, true],
-      "21-22": [false, false, true],
-      "23+": [true, false, false, false],
-    });
+    const minWageUsers: MinWage[] = filterMinWage(users);
+    expect(minWageUsers).toStrictEqual([
+      {
+        ageGroup: "<18",
+        below: 0,
+        above: 0,
+      },
+      {
+        ageGroup: "18-20",
+        below: 0,
+        above: 2,
+      },
+      { ageGroup: "21-22", below: 2, above: 1 },
+      { ageGroup: "23+", below: 3, above: 1 },
+    ]);
   });
 });

@@ -1,6 +1,5 @@
 import { MinWage, UserData } from "@/app/data/types";
 import {
-  BarChart,
   Bold,
   Card,
   Col,
