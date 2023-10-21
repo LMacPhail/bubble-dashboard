@@ -9,9 +9,12 @@ import {
   Flex,
   Metric,
   Col,
+  BarChart,
 } from "@tremor/react";
 import { userData } from "./data/userData";
 import { getMean } from "./data/utils";
+import { filterMinWage } from "./components/charts/utils";
+import MinimumWageChart from "./components/charts/MinimumWageChart";
 
 export default function DashboardExample() {
   return (
@@ -67,6 +70,9 @@ export default function DashboardExample() {
               </Flex>
             </Card>
           </div>
+        </Col>
+        <Col numColSpan={6}>
+          <MinimumWageChart userData={userData} />
         </Col>
       </Grid>
     </main>
