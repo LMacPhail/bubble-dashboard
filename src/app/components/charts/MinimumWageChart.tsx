@@ -14,13 +14,12 @@ import { filterOutliers } from "@/app/data/utils";
 
 const MinimumWageChart: React.FC<{ userData: UserData[] }> = ({ userData }) => {
   const minWageFiltered = filterMinWage(filterOutliers(userData));
-  console.log(minWageFiltered);
   return (
     <Card>
       <Title>Proportion of Minimum Wage by Age Group</Title>
       <Grid numItemsLg={4}>
         {minWageFiltered.map((mw: MinWage) => (
-          <Col>
+          <Col key={`${mw.ageGroup}-donut`}>
             <Title>{mw.ageGroup}</Title>
             <MinWageDonutCard minWageGroup={mw} />
           </Col>
